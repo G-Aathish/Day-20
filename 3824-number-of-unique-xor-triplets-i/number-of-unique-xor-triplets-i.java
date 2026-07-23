@@ -4,11 +4,13 @@ class Solution {
 
         if (n <= 2) return n;
 
-        int mask = 0;
-        for (int num : nums) {
-            mask |= num;
+        int bits = 0;
+        int x = n;
+        while (x > 0) {
+            bits++;
+            x >>= 1;
         }
 
-        return mask + 1;
+        return 1 << bits;
     }
 }
